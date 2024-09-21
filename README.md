@@ -1,0 +1,3 @@
+This project tackles the challenge of **on-device machine translation** for multiple **Indic languages** in a **resource-constrained environment**. By leveraging the **Gemma2 2B LLM** and employing **adapter switching**, the model can efficiently translate between various Indian languages without the need for separate models for each one, reducing **computational demands**. 
+
+The project specifically addresses the difficulties of training machine translation from **English** to nine Indic languages—**Tamil**, **Hindi**, **Kannada**, **Malayalam**, **Telugu**, **Bengali**, **Marathi**, **Gujarati**, and **Odia**—by utilizing adapter switching to enhance performance and manage the complexity of **multilingual translation**.
