@@ -15,7 +15,7 @@ This repository contains the code for an Indic language translation app using Do
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/indic_translation.git
+   git clone https://github.com/Hemanthkumar2112/Indic-machine-translation-gemma2-2B
    cd indic_translation
     ```
 2. **Build the Docker image**:
