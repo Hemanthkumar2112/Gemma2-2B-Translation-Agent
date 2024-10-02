@@ -19,17 +19,17 @@ This repository contains the code for an Indic language translation app using Do
    cd Indic-machine-translation-gemma2-2B
     ```
 2. **Build the Docker image**:
-```bash
-docker build -t indic_translation .
-```
+   ```bash
+   docker build -t indic_translation .
+   ```
 3. **Run the Docker container**:
-```bash
-docker run -p 8080:8080 indic_translation
-```
+   ```bash
+   docker run -p 8080:8080 indic_translation
+   ```
 4. **Access the application**:
-```bash
-http://localhost:8080
-```
+   ```bash
+   http://localhost:8080
+   ```
 ## Customizing the App
 - Feel free to modify the source code and rebuild the Docker image to customize the translation functionality.
 
