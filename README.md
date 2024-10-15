@@ -6,7 +6,9 @@ The project specifically addresses the difficulties of training machine translat
 
 ## Demo
 
-[Watch the demo video](https://github.com/Hemanthkumar2112/Indic-machine-translation-gemma2-2B/blob/main/demo/indic_adaptive_machine_translation_with_gemma2_2b_demo.mp4)
+[Watch the demo video]
+
+https://github.com/user-attachments/assets/c410d65c-fa78-47ac-95cc-ca12d8c8de08
 
 This repository contains the code for an Indic language translation app using Docker.
 
