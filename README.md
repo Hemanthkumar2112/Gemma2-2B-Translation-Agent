@@ -4,6 +4,14 @@ This project tackles the challenge of **on-demand machine translation** for mult
 
 The project specifically addresses the difficulties of training machine translation from **English** to nine Indic languages—**Tamil**, **Hindi**, **Kannada**, **Malayalam**, **Telugu**, **Bengali**, **Marathi**, **Gujarati**, and **Odia**—by utilizing adapter switching to enhance performance and manage the complexity of **multilingual translation**.
 
+Analyzing the translation of source segments into target segments using an agentic approach. The system leverages the Groq API to ensure that the source segment is accurately translated into its corresponding target segment. The process involves validating the translation quality by comparing both segments and ensuring semantic and contextual alignment.
+
+Key features include:
+- Machine translation done with the fine tuned Gemma2-2B model
+- Agentic methods Analysis for quality assurance and check for correctness in the translation process.
+- Use of Groq API to analysis
+
+
 ## Demo
 
 https://github.com/user-attachments/assets/c410d65c-fa78-47ac-95cc-ca12d8c8de08
