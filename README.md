@@ -11,7 +11,11 @@ Key features include:
 - Agentic methods Analysis for quality assurance and check for correctness in the translation process.
 - Use of Groq API to analysis
 
-
+## huggingface model
+```bash
+base_model: Hemanth-thunder/gemma-2-2b-bnb-4bit
+peft_adapters: Hemanth-thunder/indic_mt_fine_tuned_peft_adapter
+```
 ## Demo
 
 https://github.com/user-attachments/assets/c410d65c-fa78-47ac-95cc-ca12d8c8de08
