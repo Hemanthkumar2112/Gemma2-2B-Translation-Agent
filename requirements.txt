@@ -1,7 +1,8 @@
 python-dotenv==1.0.1
 streamlit==1.38.0
---extra-index-url https://download.pytorch.org/whl/cpu
-torch
-transformers==4.45.1
+# --extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.4.1
+transformers==4.45.2
 peft==0.13.0
 bitsandbytes==0.44.0
+groq==0.11.0

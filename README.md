@@ -4,6 +4,9 @@ This project tackles the challenge of **on-device machine translation** for mult
 
 The project specifically addresses the difficulties of training machine translation from **English** to nine Indic languages—**Tamil**, **Hindi**, **Kannada**, **Malayalam**, **Telugu**, **Bengali**, **Marathi**, **Gujarati**, and **Odia**—by utilizing adapter switching to enhance performance and manage the complexity of **multilingual translation**.
 
+## Demo
+
+[Watch the demo video](https://github.com/Hemanthkumar2112/Indic-machine-translation-gemma2-2B/demo/indic_adaptive_machine_translation_with_gemma2_2b_demo.mp4)
 
 This repository contains the code for an Indic language translation app using Docker.
 
@@ -24,11 +27,15 @@ This repository contains the code for an Indic language translation app using Do
    ```
 3. **Run the Docker container**:
    ```bash
-   docker run -p 8080:8080 indic_translation
+   docker run --gpus all -p 8080:8080 indic_translation 
    ```
 4. **Access the application**:
    ```bash
    http://localhost:8080
+   ```
+4. **logging**
+   ```bash
+   docker logs -f container_id --tail 1000 
    ```
 ## Customizing the App
 - Feel free to modify the source code and rebuild the Docker image to customize the translation functionality.

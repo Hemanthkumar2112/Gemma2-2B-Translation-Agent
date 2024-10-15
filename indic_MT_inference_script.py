@@ -1,19 +1,27 @@
-import os
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 from peft import PeftModel
-import torch
+ 
 from dotenv import load_dotenv
+import os
+from groq import Groq
 
+import logging
+logging.basicConfig(filename="inference.log",format='%(asctime)s %(message)s',filemode='w')
+
+# Creating an object
+logger = logging.getLogger()
 load_dotenv()
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-base_model = "google/gemma-2-2b"
+base_model ="/app/models/gemma-2-2b" #"Hemanth-thunder/gemma-2-2b-bnb-4bit"
 HUGGING_FACE_TOKEN = os.getenv('HUGGING_FACE_TOKEN') ####replace_this_to_huggingface_token
+client = Groq(api_key=os.environ.get("AGENT_GROQ"))
 
-bnb_config = BitsAndBytesConfig(load_in_4bit=True,bnb_4bit_quant_type="nf4",
-                                bnb_4bit_compute_dtype=torch.bfloat16,bnb_4bit_use_double_quant=True,token=HUGGING_FACE_TOKEN)
-model = AutoModelForCausalLM.from_pretrained(base_model, device_map={"": 0},quantization_config=bnb_config,token=HUGGING_FACE_TOKEN)
-tokenizer = AutoTokenizer.from_pretrained(base_model, use_fast=True,token=HUGGING_FACE_TOKEN)
+#bnb_config = BitsAndBytesConfig(load_in_4bit=True,bnb_4bit_quant_type="nf4",bnb_4bit_compute_dtype=torch.bfloat16,bnb_4bit_use_double_quant=True)
+logger.info("Loading Base Model")
+model = AutoModelForCausalLM.from_pretrained(base_model,low_cpu_mem_usage=True).to("cuda")#, ,token=HUGGING_FACE_TOKEN ,quantization_config=bnb_config
+logger.info("Loading Tokenizer")
+tokenizer = AutoTokenizer.from_pretrained(base_model, use_fast=True) #,token=HUGGING_FACE_TOKEN
 
 # PEFT models paths
 peft_models_path = {
@@ -32,6 +40,20 @@ peft_models_path = {
 adapter_names = list(peft_models_path.keys())
 
 pipeline_type = "text-generation"
+
+peft_model = PeftModel.from_pretrained(model, peft_models_path['tamil'], adapter_name="tamil")
+
+for lang, path in peft_models_path.items():
+    if lang != "tamil":
+        try:
+            _ = peft_model.load_adapter(path, adapter_name=lang)
+            print(f"load {lang}")
+        except Exception as e:
+            print(f"Error loading adapter for {lang}: {e}")
+# Set the model to evaluation mode
+peft_model.eval()
+
+
 
 alpaca_prompt = """
 ### Instruction:
@@ -68,17 +90,7 @@ def generate(lang, english_text, response_text, merged_model, to_set_lang):
         print(f"Error during generation: {e}")
         return None
     
-### stack other language with the peft model
-#### merging tamil translation with base model with the adapter name tamil
 
-peft_model = PeftModel.from_pretrained(model, peft_models_path['tamil'], adapter_name="tamil")
 
-for lang, path in peft_models_path.items():
-    if lang != "tamil":
-        try:
-            _ = peft_model.load_adapter(path, adapter_name=lang)
-            print(f"load {lang}")
-        except Exception as e:
-            print(f"Error loading adapter for {lang}: {e}")
-# Set the model to evaluation mode
-peft_model.eval()
+
+
