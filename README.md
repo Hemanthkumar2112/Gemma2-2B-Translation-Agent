@@ -11,27 +11,29 @@ The project specifically addresses the difficulties of training machine translat
 https://github.com/user-attachments/assets/c410d65c-fa78-47ac-95cc-ca12d8c8de08
 
 
-# Steps to Create and Store a GROQ API (AGENT_GROQ) and HUGGING_FACE_TOKEN in a .env file:
+## Steps to Create and Store a GROQ API (AGENT_GROQ) and HUGGING_FACE_TOKEN in a .env file:
 
 ```bash
 Create a .env file:
 ```
 In the root directory, create a new file called .env.
 
-# Set up the GROQ API:
+## Set up the HUGGING_FACE_TOKEN GROQ API(Agent):
 
 Generate your GROQ API key (or token) and HUGGING_FACE_TOKEN from the relevant service.
 Store the API key in the .env file:
 
-Open the .env file and add the GROQ API key
+Open the .env file and add the GROQ API key and HUGGING_FACE token 
 
 ```bash
 HUGGING_FACE_TOKEN=your_api_key_here
 AGENT_GROQ=your_api_key_here
 ```
-This repository holds the code for an Indic language translation application, packaged with Docker for easy deployment.
+
 
 ## Prerequisites
+
+This repository holds the code for an Indic language translation application, packaged with Docker for easy deployment.
 
 - Make sure you have [Docker](https://www.docker.com/products/docker-desktop) installed on your machine.
 
