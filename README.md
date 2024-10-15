@@ -1,6 +1,6 @@
 # Indic Translation App
 
-This project tackles the challenge of **on-device machine translation** for multiple **Indic languages** in a **resource-constrained environment**. By leveraging the **Gemma2 2B LLM** and employing **adapter switching**, the model can efficiently translate between various Indian languages without the need for separate models for each one, reducing **computational demands**. 
+This project tackles the challenge of **on-demand machine translation** for multiple **Indic languages** in a **resource-constrained environment**. By leveraging the **Gemma2 2B LLM** and employing **adapter switching**, the model can efficiently translate between various Indian languages without the need for separate models for each one, reducing **computational demands**. 
 
 The project specifically addresses the difficulties of training machine translation from **English** to nine Indic languages—**Tamil**, **Hindi**, **Kannada**, **Malayalam**, **Telugu**, **Bengali**, **Marathi**, **Gujarati**, and **Odia**—by utilizing adapter switching to enhance performance and manage the complexity of **multilingual translation**.
 
@@ -10,7 +10,26 @@ The project specifically addresses the difficulties of training machine translat
 
 https://github.com/user-attachments/assets/c410d65c-fa78-47ac-95cc-ca12d8c8de08
 
-This repository contains the code for an Indic language translation app using Docker.
+
+# Steps to Create and Store a GROQ API (AGENT_GROQ) and HUGGING_FACE_TOKEN in a .env file:
+
+```bash
+Create a .env file:
+```
+In the root directory, create a new file called .env.
+
+# Set up the GROQ API:
+
+Generate your GROQ API key (or token) and HUGGING_FACE_TOKEN from the relevant service.
+Store the API key in the .env file:
+
+Open the .env file and add the GROQ API key
+
+```bash
+HUGGING_FACE_TOKEN=your_api_key_here
+AGENT_GROQ=your_api_key_here
+```
+This repository holds the code for an Indic language translation application, packaged with Docker for easy deployment.
 
 ## Prerequisites
 
