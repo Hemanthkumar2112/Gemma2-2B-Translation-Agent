@@ -1,6 +1,6 @@
 # Indic Translation App
 
-This project tackles the challenge of **on-demand machine translation** for multiple **Indic languages** in a **resource-constrained environment**. By leveraging the **Gemma2 2B LLM** and employing **adapter switching**, the model can efficiently translate between various Indian languages without the need for separate models for each one, reducing **computational demands**. 
+This project tackles the challenge of **on-demand machine translation** for multiple **Indic languages** in a **resource-constrained environment**. By leveraging the **Gemma2 2B LLM** and employing **adapter switching** (LoRA switch), the model can efficiently translate between various Indian languages without the need for separate models for each one, reducing **computational demands**. 
 
 The project specifically addresses the difficulties of training machine translation from **English** to nine Indic languages—**Tamil**, **Hindi**, **Kannada**, **Malayalam**, **Telugu**, **Bengali**, **Marathi**, **Gujarati**, and **Odia**—by utilizing adapter switching to enhance performance and manage the complexity of **multilingual translation**.
 
@@ -62,9 +62,6 @@ This repository holds the code for an Indic language translation application, pa
    ```bash
    docker logs -f container_id --tail 1000 
    ```
-## Customizing the App
-- Feel free to modify the source code and rebuild the Docker image to customize the translation functionality.
-
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
