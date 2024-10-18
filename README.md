@@ -62,6 +62,17 @@ This repository holds the code for an Indic language translation application, pa
    ```bash
    docker logs -f container_id --tail 1000 
    ```
+
+## Citation
+
+```bibTeX
+@article{
+  title = {Efficient Multilingual Machine Translation for Indic Languages: Leveraging Gemma2-2B LLM with Agent},
+  author = {Hemanth-thunder},
+  year={2024}
+}
+```
+
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
